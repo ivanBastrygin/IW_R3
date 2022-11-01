@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title></title>
+</head>
+<body>
+<style type="text/css">
+.button{
+cursor: pointer;
+display: block;
+width: 250px;
+margin-top:25px ;
+padding: 20px 0px;
+border: 1px solid #E5E5E5;
+background-color: white;
+color: black;
+border-radius: 10px;
+}
+</style>
+<button class="button" onclick="create()">Создать объект</button>
+<button class="button" onclick="output()">Вывести объекты</button>
+<script>
+	const vehicles = [];
+  function create(){
+var name= prompt("введите название модели");
+var engine= prompt("введите название двигателя");
+var maxspeed= prompt("введите максимальную скорость");
+vehicles.push(new Car(name,engine,maxspeed));
+  }
+  function Car(name, engine,maxspeed) {
+
+  this.name = name;
+  this.engine = engine;
+this.maxspeed = maxspeed;
+}
+function output(){
+vehicles.forEach( vehicle => {
+   print.call(vehicle);
+});	
+}
+function print() {
+   
+   console.log("название модели: " +  this.name);
+   console.log("название двигателя: " +  this.engine);
+   console.log("максимальная скорость: " +  this.maxspeed);
+}
+</script>
+</body>
+</html>
